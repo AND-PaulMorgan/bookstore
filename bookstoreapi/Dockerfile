@@ -1,3 +1,3 @@
-FROM 21-alpine3.18
+FROM amazoncorretto:21-alpine3.18
 COPY target/bookstoreapi-0.0.1-SNAPSHOT.jar ./app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
