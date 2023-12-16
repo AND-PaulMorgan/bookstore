@@ -1,0 +1,34 @@
+version: '3.3'
+
+services:
+  db:
+    image: 'postgres:16'
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER_FILE=/run/secrets/postgres_user
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+      - POSTGRES_DB=bookstore
+    secrets:
+      - postgres_user
+      - postgres_password
+
+  api:
+    build:
+      context: ./bookstoreapi
+    ports:
+      - 8000:8000
+      - 8080:8080
+    environment:
+      - POSTGRES_USER_FILE=/run/secrets/postgres_user
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+      - POSTGRES_DB=bookstore
+    secrets:
+      - postgres_user
+      - postgres_password
+
+secrets:
+  postgres_user:
+    file: db/postgres_user.txt
+  postgres_password:
+    file: db/postgres_password.txt
