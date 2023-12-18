@@ -1,3 +1,4 @@
 .DS_Store
-./db/postgres_user.txt
-./db/postgres_password.txt
+./db/postgres_user
+./db/postgres_password
+./db/postgres_db
