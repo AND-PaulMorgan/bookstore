@@ -1,5 +1,11 @@
-package digital.and.bookstoreapi.book;
+package digital.and.bookstoreapi.v1;
 
+import digital.and.bookstoreapi.book.Book;
+import digital.and.bookstoreapi.book.BookService;
+import digital.and.bookstoreapi.dto.request.v1.CreateBookDto;
+import digital.and.bookstoreapi.exceptions.BookNotFoundException;
+import digital.and.bookstoreapi.exceptions.IsbnAlreadyUsedException;
+import digital.and.bookstoreapi.mapper.CreateBookDtoToBookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -37,13 +43,13 @@ public class BookController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Book createBook(@RequestBody Book book) {
-        Book createdBook;
+    public Book createBook(@RequestBody CreateBookDto bookDto) {
+        Book createdBook = CreateBookDtoToBookMapper.map(bookDto);
 
         try {
-            return bookService.createBook(book);
+            return bookService.createBook(createdBook);
         }
-        catch(IllegalStateException e) {
+        catch(IsbnAlreadyUsedException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
@@ -54,7 +60,7 @@ public class BookController {
         try {
             bookService.deleteBook(id);
         }
-        catch(IllegalStateException e) {
+        catch(BookNotFoundException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
@@ -69,7 +75,7 @@ public class BookController {
         try {
             return bookService.updateBook(id, book);
         }
-        catch(IllegalStateException e) {
+        catch(BookNotFoundException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
