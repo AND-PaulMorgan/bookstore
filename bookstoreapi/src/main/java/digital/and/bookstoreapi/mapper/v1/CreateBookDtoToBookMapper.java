@@ -1,4 +1,4 @@
-package digital.and.bookstoreapi.mapper;
+package digital.and.bookstoreapi.mapper.v1;
 
 import digital.and.bookstoreapi.book.Book;
 import digital.and.bookstoreapi.dto.request.v1.CreateBookDto;

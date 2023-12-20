@@ -5,7 +5,7 @@ import digital.and.bookstoreapi.book.BookService;
 import digital.and.bookstoreapi.dto.request.v1.CreateBookDto;
 import digital.and.bookstoreapi.exceptions.BookNotFoundException;
 import digital.and.bookstoreapi.exceptions.IsbnAlreadyUsedException;
-import digital.and.bookstoreapi.mapper.CreateBookDtoToBookMapper;
+import digital.and.bookstoreapi.mapper.v1.CreateBookDtoToBookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
