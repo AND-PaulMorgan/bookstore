@@ -4,8 +4,10 @@ import digital.and.bookstoreapi.book.Book;
 import digital.and.bookstoreapi.book.BookService;
 import digital.and.bookstoreapi.dto.request.v1.CreateBookDto;
 import digital.and.bookstoreapi.exceptions.BookNotFoundException;
+import digital.and.bookstoreapi.exceptions.InvalidIsbnLengthException;
 import digital.and.bookstoreapi.exceptions.IsbnAlreadyUsedException;
 import digital.and.bookstoreapi.mapper.v1.CreateBookDtoToBookMapper;
+import digital.and.bookstoreapi.validator.CreateBookDtoValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -44,6 +46,15 @@ public class BookController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Book createBook(@RequestBody CreateBookDto bookDto) {
+        try {
+            if (!CreateBookDtoValidator.isValid(bookDto)) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid data, cannot create new book.");
+            }
+        }
+        catch (InvalidIsbnLengthException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid data, malformed isbn, cannot create new book.");
+        }
+
         Book createdBook = CreateBookDtoToBookMapper.map(bookDto);
 
         try {
