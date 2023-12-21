@@ -1,4 +1,4 @@
-package digital.and.bookstoreapi.dto.request.v1;
+package digital.and.bookstoreapi.v1.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

@@ -1,9 +1,9 @@
 package digital.and.bookstoreapi.v1;
 
-import digital.and.bookstoreapi.dto.request.v1.CreateUserDto;
-import digital.and.bookstoreapi.dto.response.UserResponseDto;
+import digital.and.bookstoreapi.v1.dto.CreateUserDto;
+import digital.and.bookstoreapi.v1.dto.UserResponseDto;
 import digital.and.bookstoreapi.exceptions.UsernameUsedException;
-import digital.and.bookstoreapi.mapper.v1.UserToUserResponseDtoMapper;
+import digital.and.bookstoreapi.v1.mapper.UserToUserResponseDtoMapper;
 import digital.and.bookstoreapi.user.User;
 import digital.and.bookstoreapi.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

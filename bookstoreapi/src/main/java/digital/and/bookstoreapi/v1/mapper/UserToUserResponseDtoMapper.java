@@ -1,6 +1,6 @@
-package digital.and.bookstoreapi.mapper.v1;
+package digital.and.bookstoreapi.v1.mapper;
 
-import digital.and.bookstoreapi.dto.response.UserResponseDto;
+import digital.and.bookstoreapi.v1.dto.UserResponseDto;
 import digital.and.bookstoreapi.user.User;
 
 public class UserToUserResponseDtoMapper {

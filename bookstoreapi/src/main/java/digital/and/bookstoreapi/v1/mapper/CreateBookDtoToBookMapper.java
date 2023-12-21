@@ -1,7 +1,7 @@
-package digital.and.bookstoreapi.mapper.v1;
+package digital.and.bookstoreapi.v1.mapper;
 
 import digital.and.bookstoreapi.book.Book;
-import digital.and.bookstoreapi.dto.request.v1.CreateBookDto;
+import digital.and.bookstoreapi.v1.dto.CreateBookDto;
 
 public class CreateBookDtoToBookMapper {
     public static Book map(CreateBookDto dto) {

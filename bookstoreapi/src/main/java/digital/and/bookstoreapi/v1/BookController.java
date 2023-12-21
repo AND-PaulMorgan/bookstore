@@ -2,11 +2,11 @@ package digital.and.bookstoreapi.v1;
 
 import digital.and.bookstoreapi.book.Book;
 import digital.and.bookstoreapi.book.BookService;
-import digital.and.bookstoreapi.dto.request.v1.CreateBookDto;
+import digital.and.bookstoreapi.v1.dto.CreateBookDto;
 import digital.and.bookstoreapi.exceptions.BookNotFoundException;
 import digital.and.bookstoreapi.exceptions.InvalidIsbnLengthException;
 import digital.and.bookstoreapi.exceptions.IsbnAlreadyUsedException;
-import digital.and.bookstoreapi.mapper.v1.CreateBookDtoToBookMapper;
+import digital.and.bookstoreapi.v1.mapper.CreateBookDtoToBookMapper;
 import digital.and.bookstoreapi.validator.CreateBookDtoValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

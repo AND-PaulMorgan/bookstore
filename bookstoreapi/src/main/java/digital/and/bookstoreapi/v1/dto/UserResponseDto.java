@@ -1,4 +1,4 @@
-package digital.and.bookstoreapi.dto.response;
+package digital.and.bookstoreapi.v1.dto;
 
 import java.util.List;
 

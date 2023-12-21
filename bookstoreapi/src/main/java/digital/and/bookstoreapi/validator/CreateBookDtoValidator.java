@@ -1,6 +1,6 @@
 package digital.and.bookstoreapi.validator;
 
-import digital.and.bookstoreapi.dto.request.v1.CreateBookDto;
+import digital.and.bookstoreapi.v1.dto.CreateBookDto;
 import digital.and.bookstoreapi.exceptions.InvalidIsbnLengthException;
 
 public class CreateBookDtoValidator {

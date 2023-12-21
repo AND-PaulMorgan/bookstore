@@ -1,7 +1,8 @@
 package digital.and.bookstoreapi.mapper.v1;
 
 import digital.and.bookstoreapi.book.Book;
-import digital.and.bookstoreapi.dto.request.v1.CreateBookDto;
+import digital.and.bookstoreapi.v1.dto.CreateBookDto;
+import digital.and.bookstoreapi.v1.mapper.CreateBookDtoToBookMapper;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
