@@ -24,11 +24,20 @@ services:
       - postgres_user
       - postgres_password
       - postgres_db
+      - api_user
+      - api_password
+      - api_role
 
 secrets:
   postgres_user:
-    file: db/postgres_user
+    file: db/secrets/postgres_user
   postgres_password:
-    file: db/postgres_password
+    file: db/secrets/postgres_password
   postgres_db:
-    file: db/postgres_db
+    file: db/secrets/postgres_db
+  api_user:
+    file: bookstoreapi/secrets/defaultuser_username
+  api_password:
+    file: bookstoreapi/secrets/defaultuser_password
+  api_role:
+    file: bookstoreapi/secrets/defaultuser_role

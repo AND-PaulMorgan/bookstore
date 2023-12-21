@@ -1,4 +1,3 @@
 .DS_Store
-./db/postgres_user
-./db/postgres_password
-./db/postgres_db
+./db/secrets/*
+./bookstoreapi/secrets/*
